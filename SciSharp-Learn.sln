@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SciSharpLearn.UnitTest", "t
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SciSharpLearn.Core", "src\SciSharpLearn.Core\SciSharpLearn.Core.csproj", "{1009DAE0-D2AF-424B-AEE7-2DDD79397754}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SciSharp.Core", "..\SciSharp\src\SciSharp.Core\SciSharp.Core.csproj", "{2BEE612C-775F-48FE-AF34-C94129F1DB15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1009DAE0-D2AF-424B-AEE7-2DDD79397754}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1009DAE0-D2AF-424B-AEE7-2DDD79397754}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1009DAE0-D2AF-424B-AEE7-2DDD79397754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BEE612C-775F-48FE-AF34-C94129F1DB15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BEE612C-775F-48FE-AF34-C94129F1DB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BEE612C-775F-48FE-AF34-C94129F1DB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BEE612C-775F-48FE-AF34-C94129F1DB15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

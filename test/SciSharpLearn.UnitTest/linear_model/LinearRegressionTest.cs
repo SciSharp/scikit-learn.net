@@ -12,7 +12,7 @@ namespace SciSharpLearn.UnitTest.linear_model
         NumPy np = new NumPy();
 
         [TestMethod]
-        public void LinearRegression()
+        public void LRTest()
         {
             var X = np.array(new int[][]
             {
@@ -24,7 +24,7 @@ namespace SciSharpLearn.UnitTest.linear_model
 
             var y = np.dot(X, np.array(new int[] { 1, 2 })) + 3;
 
-            var reg = LinearRegression().fit(X, y);
+            //var reg = LinearRegression().fit(X, y);
         }
     }
 }
