@@ -14,10 +14,12 @@ namespace SciSharpLearn.Core.feature_extraction.text
     public class CountVectorizer : VectorizerMixin
     {
         protected int min_df;
+        protected int max_df;
 
-        public CountVectorizer(string analyzer = "word", int min_df = 1)
+        public CountVectorizer(string analyzer = "word", int max_df = 1, int min_df = 1)
         {
             this.analyzer = analyzer;
+            this.max_df = max_df;
             this.min_df = min_df;
         }
 
@@ -29,14 +31,14 @@ namespace SciSharpLearn.Core.feature_extraction.text
             int feature_idx_all = 0;
             string doc = String.Empty;
 
-            var values = new List<int>();
+            var values = new List<double>();
             var j_indices = new List<int>();
             var indptr = new List<int>() { 0 };
 
             for (int i = 0; i < raw_documents.Length; i++)
             {
                 doc = raw_documents[i];
-                var feature_counter = new Dictionary<int, int>();
+                var feature_counter = new Dictionary<int, double>();
 
                 foreach (string feature in analyze.analyze(doc))
                 {
@@ -75,6 +77,24 @@ namespace SciSharpLearn.Core.feature_extraction.text
             X.sort_indices();
 
             return (vocabulary, X);
+        }
+
+        public csr_matrix _sort_features(csr_matrix X, Dictionary<string, int> vocabulary)
+        {
+            var mapping = new Dictionary<int, int>();
+            for (int i = 0; i < vocabulary.Count; i++)
+            {
+                var element = vocabulary.ElementAt(i);
+                mapping[element.Value] = i;
+                vocabulary[element.Key] = i;
+            }
+
+            for (int i = 0; i < X.indices.Size; i++)
+            {
+                X.indices.int32[i] = mapping[X.indices.int32[i]];
+            }
+
+            return X;
         }
     }
 }
