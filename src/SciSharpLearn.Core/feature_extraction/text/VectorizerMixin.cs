@@ -15,5 +15,24 @@ namespace SciSharpLearn.Core.feature_extraction.text
         {
             return doc;
         }
+
+        protected ITextAnalyzer build_analyzer()
+        {
+            ITextAnalyzer analyzer = null;
+
+            switch (this.analyzer)
+            {
+                case "word":
+                    analyzer = new WordTextAnalyzer();
+                    break;
+            }
+
+            return analyzer;
+        }
+
+        protected string[] _word_ngrams(string[] tokens)
+        {
+            return tokens;
+        }
     }
 }
