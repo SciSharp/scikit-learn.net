@@ -15,6 +15,8 @@ namespace SciSharpLearn.Core.feature_extraction.text
     {
         protected int min_df;
         protected int max_df;
+        protected Dictionary<string, int> vocabulary_;
+        protected NumPy np = new NumPy();
 
         public CountVectorizer(string analyzer = "word", int max_df = 1, int min_df = 1)
         {
@@ -76,6 +78,8 @@ namespace SciSharpLearn.Core.feature_extraction.text
 
             X.sort_indices();
 
+            vocabulary_ = vocabulary;
+
             return (vocabulary, X);
         }
 
@@ -104,20 +108,16 @@ namespace SciSharpLearn.Core.feature_extraction.text
                 return (X, vocabulary);
             }
 
-            var np = new NumPy();
-
-            // _document_frequency
-            var dfs = X.indices.int32.GroupBy(x => x)
-                .Select(x => new
-                {
-                    key = x.Key,
-                    total = x.Count()
-                }).OrderBy(x => x.key).ToArray();
-
+            var dfs = TextHelper._document_frequency(X);
             var tfs = np.asarray(X.sum(axis: 0)).ravel();
 
-            var mask = np.ones(new Shape(dfs.Length), dtype: typeof(bool));
+            var mask = np.ones(dfs.shape, dtype: typeof(bool));
             return (X, vocabulary);
+        }
+
+        public string[] get_feature_names()
+        {
+            return vocabulary_.Select(x => x.Key).ToArray();
         }
     }
 }

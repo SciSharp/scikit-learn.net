@@ -24,6 +24,7 @@ namespace SciSharpLearn.Core.feature_extraction.text
 
             _limit_features(X, vocabulary, max_doc_count, min_doc_count);
             _tfidf.fit(X);
+            _tfidf.transform(X);
 
             return X;
         }
