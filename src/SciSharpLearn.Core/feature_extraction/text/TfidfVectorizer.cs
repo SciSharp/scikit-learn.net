@@ -7,9 +7,11 @@ namespace SciSharpLearn.Core.feature_extraction.text
 {
     public class TfidfVectorizer : CountVectorizer
     {
+        public TfidfTransformer _tfidf { get; set; }
+
         public TfidfVectorizer()
         {
-
+            _tfidf = new TfidfTransformer();
         }
 
         public csr_matrix fit_transform(string[] corpus)
@@ -21,6 +23,7 @@ namespace SciSharpLearn.Core.feature_extraction.text
             int min_doc_count = min_df;
 
             _limit_features(X, vocabulary, max_doc_count, min_doc_count);
+            _tfidf.fit(X);
 
             return X;
         }
