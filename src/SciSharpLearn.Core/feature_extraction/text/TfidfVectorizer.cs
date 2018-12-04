@@ -20,6 +20,7 @@ namespace SciSharpLearn.Core.feature_extraction.text
             int max_doc_count = X.shape[0];
             int min_doc_count = min_df;
 
+            _limit_features(X, vocabulary, max_doc_count, min_doc_count);
 
             return X;
         }

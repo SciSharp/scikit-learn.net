@@ -89,12 +89,35 @@ namespace SciSharpLearn.Core.feature_extraction.text
                 vocabulary[element.Key] = i;
             }
 
-            for (int i = 0; i < X.indices.Size; i++)
+            for (int i = 0; i < X.indices.size; i++)
             {
                 X.indices.int32[i] = mapping[X.indices.int32[i]];
             }
 
             return X;
+        }
+
+        public (csr_matrix, Dictionary<string, int>) _limit_features(csr_matrix X, Dictionary<string, int> vocabulary, int hight = -1, int low = -1, int limit = -1)
+        {
+            if(hight == -1 && low == -1 && limit == -1)
+            {
+                return (X, vocabulary);
+            }
+
+            var np = new NumPy();
+
+            // _document_frequency
+            var dfs = X.indices.int32.GroupBy(x => x)
+                .Select(x => new
+                {
+                    key = x.Key,
+                    total = x.Count()
+                }).OrderBy(x => x.key).ToArray();
+
+            var tfs = np.asarray(X.sum(axis: 0)).ravel();
+
+            var mask = np.ones(new Shape(dfs.Length), dtype: typeof(bool));
+            return (X, vocabulary);
         }
     }
 }
