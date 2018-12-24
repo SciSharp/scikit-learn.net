@@ -11,7 +11,6 @@ namespace SciSharpLearn.Core.feature_extraction.text
         private bool smooth_idf;
         protected csr_matrix _idf_diag;
 
-        NumPy np = new NumPy();
         sparse sp = new sparse();
 
         public TfidfTransformer(bool smooth_idf = true)

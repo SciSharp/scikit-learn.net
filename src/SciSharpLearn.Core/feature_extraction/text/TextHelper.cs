@@ -9,11 +9,9 @@ namespace SciSharpLearn.Core.feature_extraction.text
 {
     public class TextHelper
     {
-        private static NumPy np = new NumPy();
-
         public static NDArray _document_frequency(csr_matrix X)
         {
-            var dfs = X.indices.int32.GroupBy(x => x)
+            var dfs = X.indices.Data<int>().GroupBy(x => x)
                 .Select(x => new
                 {
                     key = x.Key,

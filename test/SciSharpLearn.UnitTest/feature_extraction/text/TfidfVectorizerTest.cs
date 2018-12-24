@@ -19,7 +19,7 @@ namespace SciSharpLearn.UnitTest.feature_extraction.text
         };
 
         [TestMethod]
-        public void CountVectorizer()
+        public void TfidfVectorizer()
         {
             var vectorizer = new TfidfVectorizer();
 
@@ -31,7 +31,27 @@ namespace SciSharpLearn.UnitTest.feature_extraction.text
                 "and", "document", "first", "is", "one", "second", "the", "third", "this"
             }));
 
-            Assert.IsTrue(Enumerable.SequenceEqual(X.shape.Shapes.ToArray(), new int[] { 4, 9 }));
+            Assert.IsTrue(Enumerable.SequenceEqual(X.shape.Dimensions, new int[] { 4, 9 }));
+        }
+
+        [TestMethod]
+        public void CountVectorizer()
+        {
+            var bigram_vectorizer = new CountVectorizer();
+
+            var analyze = bigram_vectorizer.build_analyzer();
+            var tokens = analyze.analyze("You are cool!");
+            Assert.IsTrue(Enumerable.SequenceEqual(tokens, new string[] { "you", "are", "cool" }));
+        }
+
+        [TestMethod]
+        public void CountVectorizerBiGram()
+        {
+            var bigram_vectorizer = new CountVectorizer();
+
+            var analyze = bigram_vectorizer.build_analyzer();
+            var tokens = analyze.analyze("Bi-grams are cool!");
+            Assert.IsTrue(Enumerable.SequenceEqual(tokens, new string[] { "bi", "grams", "are", "cool", "bi grams", "grams are", "are cool" }));
         }
     }
 }

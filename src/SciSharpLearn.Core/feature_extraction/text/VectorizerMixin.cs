@@ -16,7 +16,7 @@ namespace SciSharpLearn.Core.feature_extraction.text
             return doc;
         }
 
-        protected ITextAnalyzer build_analyzer()
+        public ITextAnalyzer build_analyzer()
         {
             ITextAnalyzer analyzer = null;
 

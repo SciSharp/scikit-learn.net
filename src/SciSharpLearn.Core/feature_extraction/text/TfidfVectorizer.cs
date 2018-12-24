@@ -19,7 +19,7 @@ namespace SciSharpLearn.Core.feature_extraction.text
             var (vocabulary, X) = _count_vocab(corpus);
             X = _sort_features(X, vocabulary);
 
-            int max_doc_count = X.shape[0];
+            int max_doc_count = X.shape.Dimensions[0];
             int min_doc_count = min_df;
 
             _limit_features(X, vocabulary, max_doc_count, min_doc_count);

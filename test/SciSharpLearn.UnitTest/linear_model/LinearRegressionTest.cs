@@ -9,8 +9,6 @@ namespace SciSharpLearn.UnitTest.linear_model
     [TestClass]
     public class LinearRegressionTest
     {
-        NumPy np = new NumPy();
-
         [TestMethod]
         public void LRTest()
         {

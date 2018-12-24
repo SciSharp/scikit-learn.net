@@ -16,7 +16,6 @@ namespace SciSharpLearn.Core.feature_extraction.text
         protected int min_df;
         protected int max_df;
         protected Dictionary<string, int> vocabulary_;
-        protected NumPy np = new NumPy();
 
         public CountVectorizer(string analyzer = "word", int max_df = 1, int min_df = 1)
         {
@@ -67,7 +66,6 @@ namespace SciSharpLearn.Core.feature_extraction.text
 
             vocabulary = vocabulary.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
 
-            var np = new NumPy();
             var data1 = np.array(values.ToArray(), np.int32);
             var indices1 = np.array(j_indices.ToArray(), np.int32);
             var indptr1 = np.array(indptr.ToArray(), np.int32);
@@ -95,7 +93,7 @@ namespace SciSharpLearn.Core.feature_extraction.text
 
             for (int i = 0; i < X.indices.size; i++)
             {
-                X.indices.int32[i] = mapping[X.indices.int32[i]];
+                X.indices.Data<int>()[i] = mapping[X.indices.Data<int>()[i]];
             }
 
             return X;
@@ -109,9 +107,9 @@ namespace SciSharpLearn.Core.feature_extraction.text
             }
 
             var dfs = TextHelper._document_frequency(X);
-            var tfs = np.asarray(X.sum(axis: 0)).ravel();
+            NDArray tfs = null;// np.asarray(X.sum(axis: 0)).ravel();
 
-            var mask = np.ones(dfs.shape, dtype: typeof(bool));
+            var mask = np.ones((Shape)dfs.Storage.Shape, dtype: typeof(bool));
             return (X, vocabulary);
         }
 
