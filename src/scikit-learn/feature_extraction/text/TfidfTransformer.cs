@@ -1,5 +1,5 @@
 ﻿using NumSharp.Core;
-using SciSharp.Core.Sparse;
+using NumSharp.Core.Sparse;
 using System;
 using System.Collections.Generic;
 using System.Text;

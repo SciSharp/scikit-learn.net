@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scikit-learn", "src\scikit-learn\scikit-learn.csproj", "{B938D4D2-14EE-4D19-9F36-3D4488D0D00D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scikit-learn.UnitTest", "test\scikit-learn.UnitTest\scikit-learn.UnitTest.csproj", "{402849CE-D84D-4390-816B-C0748DED096D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B938D4D2-14EE-4D19-9F36-3D4488D0D00D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B938D4D2-14EE-4D19-9F36-3D4488D0D00D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B938D4D2-14EE-4D19-9F36-3D4488D0D00D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B938D4D2-14EE-4D19-9F36-3D4488D0D00D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{402849CE-D84D-4390-816B-C0748DED096D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{402849CE-D84D-4390-816B-C0748DED096D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{402849CE-D84D-4390-816B-C0748DED096D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{402849CE-D84D-4390-816B-C0748DED096D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30BBAA3F-50DB-449E-A046-4ABD3A0230BD}
+	EndGlobalSection
+EndGlobal
