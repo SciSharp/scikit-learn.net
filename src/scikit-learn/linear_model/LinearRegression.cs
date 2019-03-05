@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SciSharpLearn.Core.linear_model
+namespace sklearn.linear_model
 {
     public class LinearRegression
     {

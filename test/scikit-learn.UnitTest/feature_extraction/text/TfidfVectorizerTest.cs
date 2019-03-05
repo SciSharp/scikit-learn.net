@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SciSharpLearn.Core.feature_extraction.text;
+using sklearn.feature_extraction.text;
 using System;
 using System.Collections.Generic;
 using System.Linq;

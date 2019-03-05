@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SciSharpLearn.Core.feature_extraction.text
+namespace sklearn.feature_extraction.text
 {
     /// <summary>
     /// Convert a collection of text documents to a matrix of token counts

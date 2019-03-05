@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace SciSharpLearn.Core.feature_extraction.text
+namespace sklearn.feature_extraction.text
 {
     public class WordTextAnalyzer : ITextAnalyzer
     {
