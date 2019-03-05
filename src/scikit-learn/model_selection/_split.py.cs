@@ -6,5 +6,9 @@ namespace sklearn.model_selection
 {
     public class _split
     {
+        public static void train_test_split()
+        {
+
+        }
     }
 }

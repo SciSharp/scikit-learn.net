@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SciSharpLearn.UnitTest.linear_model
+namespace sklearn.UnitTest.linear_model
 {
     [TestClass]
     public class LinearRegressionTest

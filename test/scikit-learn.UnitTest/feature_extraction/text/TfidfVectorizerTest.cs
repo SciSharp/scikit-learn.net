@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SciSharpLearn.UnitTest.feature_extraction.text
+namespace sklearn.UnitTest.feature_extraction.text
 {
     [TestClass]
     public class TfidfVectorizerTest

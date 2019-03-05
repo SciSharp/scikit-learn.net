@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace>sklearn.UnitTest</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
